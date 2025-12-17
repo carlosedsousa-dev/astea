@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astea - O ecossistema completo para feiras científicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'astea-primary': '#1FBF61',
+                        'astea-dark': '#0C5A2A',
+                        'astea-light': '#B4F2C0',
+                        'astea-grayish': '#E8F8EE',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background-image: linear-gradient(to bottom, #E8F8EE, #B4F2C0);
+        }
+        .gradient-cta {
+            background-image: linear-gradient(to right, #1FBF61, #0C5A2A);
+        }
+        .testimonial-card {
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            transform: scale(0.9);
+            opacity: 0.7;
+        }
+        .testimonial-card.active {
+            transform: scale(1.05);
+            opacity: 1;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- 1️⃣ Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 h-[80px] flex items-center">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-8">
+                <img src="logo.png" alt="Astea Logo" class="h-10">
+                <ul class="hidden md:flex items-center space-x-6">
+                    <li><a href="#hub-feiras" class="text-gray-600 hover:text-astea-primary">Feiras</a></li>
+                    <li><a href="#como-funciona" class="text-gray-600 hover:text-astea-primary">Como funciona</a></li>
+                    <li><a href="#recursos" class="text-gray-600 hover:text-astea-primary">Recursos</a></li>
+                    <li><a href="#sobre" class="text-gray-600 hover:text-astea-primary">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#entrar" class="hidden sm:block text-gray-600 hover:text-astea-primary">Entrar</a>
+                <a href="#criar-feira" class="bg-astea-primary text-white px-6 py-2 rounded-lg hover:opacity-90">Criar feira</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2️⃣ Hero Section -->
+        <section class="gradient-bg h-[calc(100vh-80px)] min-h-[600px] flex items-center">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-astea-dark mb-4">Astea: O ecossistema completo para feiras científicas</h1>
+                    <p class="text-lg text-gray-700 mb-8">Organize, divulgue, participe e avalie feiras científicas em uma única plataforma.</p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#comecar" class="bg-astea-primary text-white px-8 py-3 rounded-lg text-lg">Começar agora</a>
+                        <a href="#explorar" class="border border-astea-primary text-astea-primary px-8 py-3 rounded-lg text-lg">Explorar feiras</a>
+                    </div>
+                    <div class="mt-8 text-gray-600">+10 mil alunos já participaram</div>
+                </div>
+                <div class="hidden md:block p-8">
+                    <div class="bg-white rounded-lg shadow-xl aspect-video flex items-center justify-center">
+                        <p class="text-astea-grayish">Ilustração científica moderna</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3️⃣ Como Funciona -->
+        <section id="como-funciona" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-astea-dark mb-12">Como Funciona</h2>
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+                        <div class="bg-astea-primary text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">1</div>
+                        <h3 class="font-bold text-xl mb-2">Organize feiras facilmente</h3>
+                        <p class="text-gray-600">Criação rápida e configuração completa para sua feira.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+                        <div class="bg-astea-primary text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">2</div>
+                        <h3 class="font-bold text-xl mb-2">Cadastre projetos e equipes</h3>
+                        <p class="text-gray-600">Submissão online de projetos por professores e alunos.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+                        <div class="bg-astea-primary text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">3</div>
+                        <h3 class="font-bold text-xl mb-2">Avalie com precisão</h3>
+                        <p class="text-gray-600">Critérios padronizados e uma interface simples para avaliadores.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+                        <div class="bg-astea-primary text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">4</div>
+                        <h3 class="font-bold text-xl mb-2">Divulgue para sua comunidade</h3>
+                        <p class="text-gray-600">Página pública da feira para maior alcance e engajamento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4️⃣ O Hub de Feiras Científicas -->
+        <section id="hub-feiras" class="py-20 bg-astea-grayish">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-astea-dark mb-4">Descubra feiras científicas perto de você</h2>
+                <p class="text-lg text-gray-700 mb-12">Recomendações personalizadas por região, tema e interesse.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card Feira 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-astea-light h-40 flex items-center justify-center text-astea-dark">Imagem</div>
+                        <div class="p-6 text-left">
+                            <h3 class="font-bold text-xl mb-2">Nome da Feira Exemplo 1</h3>
+                            <p class="text-gray-600 mb-1">Data: 20/10/2024</p>
+                            <p class="text-gray-600 mb-4">Local: São Paulo, SP</p>
+                            <a href="#" class="bg-astea-primary text-white px-6 py-2 rounded-lg w-full block text-center">Ver feira</a>
+                        </div>
+                    </div>
+                    <!-- Card Feira 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-astea-light h-40 flex items-center justify-center text-astea-dark">Imagem</div>
+                        <div class="p-6 text-left">
+                            <h3 class="font-bold text-xl mb-2">Feira de Ciências Regional</h3>
+                            <p class="text-gray-600 mb-1">Data: 15/11/2024</p>
+                            <p class="text-gray-600 mb-4">Local: Rio de Janeiro, RJ</p>
+                            <a href="#" class="bg-astea-primary text-white px-6 py-2 rounded-lg w-full block text-center">Ver feira</a>
+                        </div>
+                    </div>
+                    <!-- Card Feira 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-astea-light h-40 flex items-center justify-center text-astea-dark">Imagem</div>
+                        <div class="p-6 text-left">
+                            <h3 class="font-bold text-xl mb-2">Mostra Tecnológica Nacional</h3>
+                            <p class="text-gray-600 mb-1">Data: 05/12/2024</p>
+                            <p class="text-gray-600 mb-4">Local: Belo Horizonte, MG</p>
+                            <a href="#" class="bg-astea-primary text-white px-6 py-2 rounded-lg w-full block text-center">Ver feira</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5️⃣ Por que usar o Astea? -->
+        <section id="sobre" class="py-20 bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-astea-dark mb-8">Por que usar o Astea?</h2>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center"><span class="bg-astea-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✔</span> Perfil único para todas as feiras</li>
+                        <li class="flex items-center"><span class="bg-astea-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✔</span> Gestão completa de ponta a ponta</li>
+                        <li class="flex items-center"><span class="bg-astea-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✔</span> Redução de trabalho manual</li>
+                        <li class="flex items-center"><span class="bg-astea-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✔</span> Avaliação padronizada</li>
+                        <li class="flex items-center"><span class="bg-astea-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✔</span> Relatórios automáticos</li>
+                        <li class="flex items-center"><span class="bg-astea-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">✔</span> Segurança e transparência</li>
+                    </ul>
+                </div>
+                <div class=" p-8 rounded-lg">
+                     <div class="flex flex-col items-center space-y-4">
+                        <!-- Card 1: Criar feira -->
+                        <div class="bg-white p-4 w-full max-w-sm rounded-xl shadow-lg flex items-center space-x-4 border border-gray-100">
+                            <div class="flex-shrink-0">
+                                <div class="bg-astea-light text-astea-dark rounded-lg p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-astea-dark">Criar feira</div>
+                            </div>
+                        </div>
+
+                        <svg class="w-6 h-6 text-astea-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+
+                        <!-- Card 2: Cadastrar projetos -->
+                        <div class="bg-white p-4 w-full max-w-sm rounded-xl shadow-lg flex items-center space-x-4 border border-gray-100">
+                            <div class="flex-shrink-0">
+                                <div class="bg-astea-light text-astea-dark rounded-lg p-2">
+                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-astea-dark">Cadastrar projetos</div>
+                            </div>
+                        </div>
+
+                        <svg class="w-6 h-6 text-astea-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+
+                        <!-- Card 3: Avaliar -->
+                        <div class="bg-white p-4 w-full max-w-sm rounded-xl shadow-lg flex items-center space-x-4 border border-gray-100">
+                            <div class="flex-shrink-0">
+                                <div class="bg-astea-light text-astea-dark rounded-lg p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-astea-dark">Avaliar</div>
+                            </div>
+                        </div>
+
+                        <svg class="w-6 h-6 text-astea-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+
+                        <!-- Card 4: Divulgar -->
+                        <div class="bg-white p-4 w-full max-w-sm rounded-xl shadow-lg flex items-center space-x-4 border border-gray-100">
+                            <div class="flex-shrink-0">
+                                <div class="bg-astea-light text-astea-dark rounded-lg p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.136A7.757 7.757 0 015.882 11H5.882a1.76 1.76 0 01-1.76-1.76V5.882c0-.97.79-1.76 1.76-1.76h.236A7.757 7.757 0 0111 5.882zM12 5.882V19.24a1.76 1.76 0 003.417.592l2.147-6.136A7.757 7.757 0 0018.118 11h.236a1.76 1.76 0 001.76-1.76V5.882c0-.97-.79-1.76-1.76-1.76h-.236a7.757 7.757 0 00-5.236-1.76z"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-astea-dark">Divulgar</div>
+                            </div>
+                        </div>
+
+                        <svg class="w-6 h-6 text-astea-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        
+                        <!-- Card 5: Resultados -->
+                        <div class="bg-white p-4 w-full max-w-sm rounded-xl shadow-lg flex items-center space-x-4 border border-gray-100">
+                            <div class="flex-shrink-0">
+                                <div class="bg-astea-light text-astea-dark rounded-lg p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-astea-dark">Resultados</div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6️⃣ Depoimentos -->
+        <section class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center text-astea-dark mb-12">O que dizem sobre o Astea</h2>
+                <div id="testimonial-carousel" class="relative overflow-hidden">
+                    <div id="testimonial-track" class="flex items-center pb-8">
+                        <!-- Depoimento Card 1 -->
+                        <div class="testimonial-card flex-shrink-0 w-80 bg-white p-8 rounded-lg shadow-lg border mx-4">
+                            <img src="https://i.pravatar.cc/100?u=1" alt="Foto do depoente" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-astea-light">
+                            <h3 class="text-center font-bold text-xl">Carlos Silva</h3>
+                            <p class="text-center text-gray-500 mb-4">Organizador</p>
+                            <p class="text-gray-600 text-center">"O Astea transformou a organização da nossa feira. Economizamos semanas de trabalho e a experiência foi incrível para todos."</p>
+                        </div>
+                         <!-- Depoimento Card 2 -->
+                        <div class="testimonial-card flex-shrink-0 w-80 bg-white p-8 rounded-lg shadow-lg border mx-4">
+                            <img src="https://i.pravatar.cc/100?u=2" alt="Foto do depoente" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-astea-light">
+                            <h3 class="text-center font-bold text-xl">Ana Pereira</h3>
+                            <p class="text-center text-gray-500 mb-4">Professora</p>
+                            <p class="text-gray-600 text-center">"Meus alunos adoraram a facilidade de submeter os projetos. A plataforma é muito intuitiva e moderna."</p>
+                        </div>
+                         <!-- Depoimento Card 3 -->
+                        <div class="testimonial-card flex-shrink-0 w-80 bg-white p-8 rounded-lg shadow-lg border mx-4">
+                            <img src="https://i.pravatar.cc/100?u=3" alt="Foto do depoente" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-astea-light">
+                            <h3 class="text-center font-bold text-xl">Lucas Mendes</h3>
+                            <p class="text-center text-gray-500 mb-4">Aluno</p>
+                            <p class="text-gray-600 text-center">"Foi a primeira vez que participei de uma feira de ciências e achei tudo muito organizado. Quero participar de novo!"</p>
+                        </div>
+                        <!-- Depoimento Card 4 -->
+                        <div class="testimonial-card flex-shrink-0 w-80 bg-white p-8 rounded-lg shadow-lg border mx-4">
+                            <img src="https://i.pravatar.cc/100?u=4" alt="Foto do depoente" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-astea-light">
+                            <h3 class="text-center font-bold text-xl">Juliana Costa</h3>
+                            <p class="text-center text-gray-500 mb-4">Avaliadora</p>
+                            <p class="text-gray-600 text-center">"A ferramenta de avaliação é fantástica. Consegui dar feedback detalhado de forma muito mais eficiente."</p>
+                        </div>
+                        <!-- Depoimento Card 5 -->
+                        <div class="testimonial-card flex-shrink-0 w-80 bg-white p-8 rounded-lg shadow-lg border mx-4">
+                            <img src="https://i.pravatar.cc/100?u=5" alt="Foto do depoente" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-astea-light">
+                            <h3 class="text-center font-bold text-xl">Marcos Andrade</h3>
+                            <p class="text-center text-gray-500 mb-4">Organizador</p>
+                            <p class="text-gray-600 text-center">"Segurança e transparência eram nossa prioridade. O Astea entregou isso e muito mais. Recomendo fortemente!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7️⃣ Recursos da Plataforma -->
+        <section id="recursos" class="py-20 bg-astea-grayish">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-astea-dark mb-12">Recursos da Plataforma</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Submissão de Documentos</h3>
+                        <p class="text-gray-600">Envie projetos, artigos e formulários de forma simples e centralizada.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Avaliação Online</h3>
+                        <p class="text-gray-600">Avaliadores podem dar notas e feedback através de uma interface intuitiva.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Prazos Automatizados</h3>
+                        <p class="text-gray-600">Configure e gerencie datas de entrega com lembretes automáticos.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.757 16.243l1.414 1.414a1 1 0 001.414 0l1.414-1.414M10 11V-7"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Página Pública da Feira</h3>
+                        <p class="text-gray-600">Cada feira ganha uma página própria para divulgação e acesso da comunidade.</p>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 016-6h6a6 6 0 016 6v1h-3"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Controle de Acesso</h3>
+                        <p class="text-gray-600">Defina permissões para organizadores, avaliadores, professores e alunos.</p>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Dashboard de Resultados</h3>
+                        <p class="text-gray-600">Visualize o progresso da sua feira em tempo real com gráficos e métricas.</p>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Relatórios Exportáveis</h3>
+                        <p class="text-gray-600">Exporte dados em planilhas para análise, arquivamento e compartilhamento.</p>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <svg class="w-10 h-10 text-astea-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 20.417l4.5-4.5M12 14a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+                        <h3 class="font-bold text-xl mb-2">Ambiente Seguro</h3>
+                        <p class="text-gray-600">Seus dados e os dos participantes protegidos em um ambiente confiável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8️⃣ CTA Final -->
+        <section class="py-20 gradient-cta text-white text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-6">Transforme a sua feira científica com o Astea</h2>
+                <div class="flex justify-center space-x-4">
+                    <a href="#criar-feira" class="bg-white text-astea-primary px-8 py-3 rounded-lg text-lg font-bold">Criar minha feira</a>
+                    <a href="#explorar-feiras" class="border border-white text-white px-8 py-3 rounded-lg text-lg">Explorar feiras</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 9️⃣ Rodapé -->
+    <footer class="bg-astea-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="font-bold text-lg mb-4">Plataforma</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Começar</a></li>
+                    <li><a href="#" class="hover:underline">Preços</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Recursos</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Tour</a></li>
+                    <li><a href="#" class="hover:underline">Documentação</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Suporte</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">Contato</a></li>
+                    <li><a href="#" class="hover:underline">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="text-lg font-bold text-astea-primary">Astea</div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 border-t border-gray-700 pt-8 flex justify-between items-center text-sm">
+            <p>© 2025 Astea. Todos os direitos reservados.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Termos de uso</a>
+                <a href="#" class="hover:underline">Política de privacidade</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>        
